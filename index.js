@@ -26,5 +26,7 @@ app.use('/products', productRouter);
 app.use('/orders', orderRouter);
 
 app.listen({ port: process.env.PORT || 9092 }, () => {
-  console.log(`Server is listening at http://localhost:${port}`);
+  console.log(
+    `Server is listening at http://localhost:${process.env.PORT || 9092}`
+  );
 });
