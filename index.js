@@ -8,8 +8,6 @@ const { corsWithOptions } = require('./cors');
 const productRouter = require('./routes/productRouter');
 const orderRouter = require('./routes/orderRouter');
 
-const port = 4000 || process.env.PORT;
-
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
@@ -27,6 +25,6 @@ app.use(bodyParser.json());
 app.use('/products', productRouter);
 app.use('/orders', orderRouter);
 
-app.listen(port, () => {
+app.listen({ port: process.env.PORT || 9092 }, () => {
   console.log(`Server is listening at http://localhost:${port}`);
 });
