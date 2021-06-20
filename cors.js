@@ -1,7 +1,4 @@
-const whitelist = [
-  'http://localhost:3000',
-  'https://shop-cart-backend.herokuapp.com',
-];
+const whitelist = ['http://localhost:3000', 'https://shopcart08.netlify.app'];
 const corsOptionsDelegate = (req, callback) => {
   let corsOptions;
   if (whitelist.indexOf(req.header('Origin')) !== -1) {
