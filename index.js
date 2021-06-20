@@ -8,7 +8,7 @@ const { corsWithOptions } = require('./cors');
 const productRouter = require('./routes/productRouter');
 const orderRouter = require('./routes/orderRouter');
 
-const port = 4000;
+const port = 4000 || process.env.PORT;
 
 mongoose
   .connect(process.env.MONGO_URL, {
